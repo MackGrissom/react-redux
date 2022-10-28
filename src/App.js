@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
-import logo from '/home/mackgrissom/code/MackGrissom/redux-training/react-redux/src/reduxlogo.png';
+import logo from './reduxlogo.png';
 function App() {
   const counter = useSelector((state)=> state.counter);
   const dispatch = useDispatch();
