@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const counter = useSelector((state)=> state.counter);
+  const dispatch = useDispatch();
+  
+  const increment = () => {
+    dispatch({type:'INC'})
+  };
+  
+  
+  const decrement = () => {
+    dispatch({type:'DEC'})
+  };
+
+  const addBy = () => {
+    dispatch({type:'ADD',payload: 10})
+  };
+  const removeBy = () => {
+    dispatch({type:'ADD',payload: -10})
+  };
+
+  const reset =() => {
+  dispatch({type:'RESET'})
+};
+
+return (
+  <div className='container'>
+  <h1> Welcome To The Counter App</h1>
+  <p className="description"> Using Redux (Reducers, Actions and Dispatch) we're able to manipulate the data and return the updated state..witness the power of Redux! </p>
+  <h2 className="number"> {counter} </h2>
+  <button onClick={increment}  className="button">Increment</button>
+  <br/>
+  <button onClick={decrement} className="button"> Decrement</button>
+  <br/>
+  <button onClick={addBy} className="button"> Add 10</button>
+  <br/>
+  <button onClick={removeBy} className="button"> Remove 10</button>
+  <br/>
+  <button onClick={reset} className="button"> Reset </button>
+  <br/>
+  </div>
   );
 }
 
