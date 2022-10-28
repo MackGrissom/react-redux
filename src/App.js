@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
-
-
+import logo from '/home/mackgrissom/code/MackGrissom/redux-training/react-redux/src/reduxlogo.png';
 function App() {
   const counter = useSelector((state)=> state.counter);
   const dispatch = useDispatch();
@@ -28,6 +27,9 @@ function App() {
 
 return (
   <div className='container'>
+
+    <img src={logo} className='logo'/>
+
   <h1> Welcome To The Counter App</h1>
   <p className="description"> Using Redux (Reducers, Actions and Dispatch) we're able to manipulate the data and return the updated state..witness the power of Redux! </p>
   <h2 className="number"> {counter} </h2>
