@@ -28,7 +28,7 @@ function App() {
 return (
   <div className='container'>
 
-    <img src={logo} className='logo'/>
+    <img src={logo}  alt='logo' className='logo'/>
 
   <h1> Welcome To The Counter App</h1>
   <p className="description"> Using Redux (Reducers, Actions and Dispatch) we're able to manipulate the data and return the updated state..witness the power of Redux! </p>
